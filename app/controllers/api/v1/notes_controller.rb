@@ -5,13 +5,14 @@ class Api::V1::NotesController < ApplicationController
   end
 
   def create
+    # needs an id of a list to belong to in order to persist new note
+    byebug
     @note = Note.new(note_params)
     if @note.save
       render json: @note
     else
       render json: error_message
-    end
-    byebug
+    end    
   end
 
   def update
