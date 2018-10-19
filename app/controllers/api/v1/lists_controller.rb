@@ -1,5 +1,6 @@
 class Api::V1::ListsController < ApplicationController
   def index
+    # get all lists for a given board
   end
 
   def show
