@@ -1,6 +1,8 @@
 class Api::V1::ListsController < ApplicationController
   def index
-    # get all lists for a given board
+    # get all lists for a given board    
+    @lists = List.all
+    render json: @lists
   end
 
   def show
@@ -17,4 +19,9 @@ class Api::V1::ListsController < ApplicationController
 
   def destroy
   end
+
+  private
+
+
+
 end

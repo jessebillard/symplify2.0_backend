@@ -1,3 +1,3 @@
 class ListSerializer < ActiveModel::Serializer 
-    attributes :notes
+    attributes :id, :title, :notes
 end

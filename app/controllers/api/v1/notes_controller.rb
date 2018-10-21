@@ -6,9 +6,13 @@ class Api::V1::NotesController < ApplicationController
 
   def create
     # needs an id of a list to belong to in order to persist new note
-    byebug
+    # byebug
     @note = Note.new(note_params)
+    @list = List.find(params["listId"])
+    @note.list_id = @list.id
     if @note.save
+      @list.note_order.unshift(@note.id)
+      # byebug
       render json: @note
     else
       render json: error_message

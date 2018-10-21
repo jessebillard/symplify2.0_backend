@@ -1,3 +1,3 @@
 class BoardSerializer < ActiveModel::Serializer
-    attributes :title, :list_order, :lists    
+    attributes :id, :title, :list_order, :lists
 end
